@@ -1,5 +1,5 @@
 <template>
-  <Popover class="relative bg-white">
+  <Popover class="sticky top-0 z-10 bg-white">
     <div class="mx-auto max-w-7xl px-6">
       <div
         class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10"
@@ -30,12 +30,16 @@
             >Features</a
           >
         </PopoverGroup>
-        <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-          <a
-            href="#"
+        <div
+          class="hidden items-center justify-end md:flex md:flex-1 lg:w-0"
+          :class="{ invisible: y < 400 }"
+        >
+          <button
+            @click="toViewport"
             class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-emerald-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-emerald-700"
-            >Check URL now</a
           >
+            Check URL now
+          </button>
         </div>
       </div>
     </div>
@@ -75,7 +79,7 @@
             </div>
           </div>
           <div class="space-y-6 py-6 px-5">
-            <div class="grid grid-cols-1 gap-y-4 gap-x-8">
+            <PopoverButton as="div" class="grid grid-cols-1 gap-y-4 gap-x-8">
               <a
                 href="#faq"
                 class="text-base font-medium text-gray-900 hover:text-gray-700"
@@ -87,21 +91,17 @@
                 class="text-base font-medium text-gray-900 hover:text-gray-700"
                 >Features</a
               >
-              <a
-                v-for="item in resources"
-                :key="item.name"
-                :href="item.href"
-                class="text-base font-medium text-gray-900 hover:text-gray-700"
-                >{{ item.name }}</a
-              >
-            </div>
+            </PopoverButton>
             <div>
               <p class="mt-6 text-center text-base font-medium text-gray-500">
                 Want stay safe?
                 {{ ' ' }}
-                <a href="#" class="text-emerald-600 hover:text-emerald-500"
-                  >Check URL now</a
+                <PopoverButton
+                  @click="toViewport"
+                  class="text-emerald-600 hover:text-emerald-500"
                 >
+                  Check URL now
+                </PopoverButton>
               </p>
             </div>
           </div>
@@ -123,4 +123,17 @@ import {
   Close as XMarkIcon,
   ShieldCheckmarkOutline as LogoIcon,
 } from '@vicons/ionicons5'
+import { useScroll } from '@vueuse/core'
+
+function toViewport() {
+  const checker = document.querySelector('#checker')
+  if (checker) {
+    window.scrollTo({
+      top: checker.getBoundingClientRect().top - 20 + window.pageYOffset,
+      behavior: 'smooth',
+    })
+  }
+}
+
+const { y } = useScroll(window)
 </script>

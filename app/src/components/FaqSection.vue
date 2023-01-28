@@ -47,27 +47,27 @@ const faqs = [
   {
     question: 'What is the purpose of this website?',
     answer:
-      'This website allows users to preview the destination of a shortened URL provided by TinyURL, helping people to ensure the safety of links from untrusted sources.',
+      'This website allows users to uncover the destination of a shortened URL provided by TinyURL, helping people to ensure the safety of links from untrusted sources.',
   },
   {
     question: 'How does this website work?',
     answer:
-      'Users can enter a TinyURL into the provided field on the website and the website will redirect them to the destination of the shortened URL.',
+      'Users can enter a TinyURL into the provided field on the website and the website will show them the destination of the shortened URL.',
   },
   {
     question: 'Is this website safe to use?',
     answer:
-      'Yes, this website is safe to use. It is simply a tool for previewing the destination of a shortened URL and does not collect any personal information or harm your device in any way.',
+      'Yes, this website is safe to use. It is simply a tool for decoding the destination of a shortened URL and does not collect any personal information or harm your device in any way.',
   },
   {
     question: 'Can I use this website for any other shortening service?',
     answer:
-      'This website is specifically designed to work with TinyURL. If you wish to preview the destination of a shortened URL from a different service, you may need to use a different tool.',
+      'This website is specifically designed to work with TinyURL. If you wish to decode the destination of a shortened URL from a different service, you may need to use a different tool.',
   },
   {
     question: 'What should I do if I find a suspicious link?',
     answer:
-      'If you find a link that you suspect may be harmful, do not click on it and report it to the appropriate authorities. This website is simply a tool for previewing the destination of a shortened URL and should not be used as a substitute for careful internet browsing habits and good judgement.',
+      'If you find a link that you suspect may be harmful, do not click on it and report it to the appropriate authorities. This website is simply a tool for uncovering the destination of a shortened URL and should not be used as a substitute for careful internet browsing habits and good judgement.',
   },
   {
     question:

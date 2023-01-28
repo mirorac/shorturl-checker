@@ -31,7 +31,7 @@
                 <dt class="inline font-semibold text-gray-900">
                   <component
                     :is="feature.icon"
-                    class="absolute -top-1 -left-1 w-8 text-emerald-600"
+                    class="z-1 absolute -top-1 -left-1 w-8 text-emerald-600"
                     aria-hidden="true"
                   />
                   {{ feature.name }}
@@ -43,12 +43,19 @@
           </div>
         </div>
         <img
-          src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
           alt="Product screenshot"
           class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
           width="2432"
           height="1442"
         />
+        <!-- <img
+          src="https://images.unsplash.com/photo-1603985529862-9e12198c9a60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="Product screenshot"
+          class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+          width="2432"
+          height="1442"
+        /> -->
       </div>
     </div>
   </div>

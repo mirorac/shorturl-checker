@@ -1,5 +1,5 @@
-import { Logging } from '@google-cloud/logging';
-import * as functions from 'firebase-functions';
+import { Logging } from '@google-cloud/logging'
+import * as functions from 'firebase-functions'
 
 /**
  * Similar to express-unless; this skips the middleware,
@@ -10,13 +10,21 @@ import * as functions from 'firebase-functions';
  */
 export const unless = (
   paths: Array<string>,
-  middleware: (request: functions.Request, response: functions.Response, next: () => any) => any,
+  middleware: (
+    request: functions.Request,
+    response: functions.Response,
+    next: () => any
+  ) => any
 ) => {
-  return (request: functions.Request, response: functions.Response, next: () => any): any => {
-    if (paths.includes(request.path)) return next();
-    else return middleware(request, response, next);
-  };
-};
+  return (
+    request: functions.Request,
+    response: functions.Response,
+    next: () => any
+  ): any => {
+    if (paths.includes(request.path)) return next()
+    else return middleware(request, response, next)
+  }
+}
 
 /**
  * Report error to Stackdriver logging
@@ -26,8 +34,12 @@ export const unless = (
  * @param request A http request | undefined if not a http function
  * @param context Context of the error
  */
-export const reportError = (error: any, request?: functions.Request, context = {}): Promise<any> => {
-  let httpRequest: object;
+export const reportError = (
+  error: any,
+  request?: functions.Request,
+  context = {}
+): Promise<any> => {
+  let httpRequest: object
 
   if (request) {
     httpRequest = {
@@ -37,15 +49,15 @@ export const reportError = (error: any, request?: functions.Request, context = {
       userAgent: request.get('user-agent'),
       remoteIp: request.ip,
       headers: request.headers,
-    };
+    }
   } else {
-    httpRequest = {};
+    httpRequest = {}
   }
 
-  const logging = new Logging({ projectId: process.env.GCLOUD_PROJECT });
+  const logging = new Logging({ projectId: process.env.GCLOUD_PROJECT })
 
-  const logName = 'errors';
-  const log = logging.log(logName);
+  const logName = 'errors'
+  const log = logging.log(logName)
 
   const metadata: object = {
     resource: {
@@ -58,14 +70,17 @@ export const reportError = (error: any, request?: functions.Request, context = {
       // See: https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#logseverity
       severity: 'INFO',
     },
-  };
+  }
 
-  const errorEvent = { message: error.stack, context: { ...context, request: httpRequest } };
+  const errorEvent = {
+    message: error.stack,
+    context: { ...context, request: httpRequest },
+  }
 
   return new Promise((resolve, reject) => {
     log.write(log.entry(metadata, errorEvent), (error) => {
-      if (error) return reject(error);
-      return resolve();
-    });
-  });
-};
+      if (error) return reject(error)
+      return resolve(undefined)
+    })
+  })
+}
