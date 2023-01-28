@@ -24,7 +24,7 @@
         >
           <div class="w-full">
             <label for="url" class="sr-only">TinyURL</label>
-            <div class="mt-1">
+            <div class="">
               <input
                 v-model="url"
                 autocomplete="off"
@@ -153,6 +153,7 @@ import {
   CheckmarkCircle16Filled as OKIcon,
 } from '@vicons/fluent'
 import { LoadingOutlined as LoadingIcon } from '@vicons/antd'
+import { useRoute, useRouter } from 'vue-router'
 type State = 'ready' | 'working' | 'done'
 defineEmits<{
   (e: 'change', state: State): void
@@ -166,7 +167,10 @@ function toViewport() {
   })
 }
 
-const url = ref('https://tinyurl.com/ybeun8xt')
+const router = useRouter()
+const route = useRoute()
+
+const url = ref((route.query?.url as string) || '')
 const urlFetching = ref(false)
 const uncoveredUrl = ref('')
 const error = ref<string | null>(null)
@@ -185,9 +189,10 @@ async function executeCheck() {
     }
     urlFetching.value = true
     const headers = await check({ type: 'url', url: url.value }).catch((e) => {
-      error.value = 'failed'
+      error.value = 'Something went wrong. Please try again.'
     })
     urlFetching.value = false
+    router.replace({ query: { url: encodeURIComponent(url.value) } })
     if (headers) {
       if (headers.data.location) {
         uncoveredUrl.value = headers.data.location
