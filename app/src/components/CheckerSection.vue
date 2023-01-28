@@ -172,7 +172,7 @@ function toViewport() {
 const router = useRouter()
 const route = useRoute()
 
-const url = ref(route.query?.url ? decodeURIComponent(route.query?.url) : '')
+const url = ref(decodeURIComponent(String(route.query?.url || '')))
 const urlFetching = ref(false)
 const uncoveredUrl = ref('')
 const error = ref<string | null>(null)
