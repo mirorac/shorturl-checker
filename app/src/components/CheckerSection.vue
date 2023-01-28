@@ -161,16 +161,18 @@ defineEmits<{
 
 const checker = ref<HTMLElement>()
 function toViewport() {
-  window.scrollTo({
-    top: checker.value?.getBoundingClientRect().top - 20 + window.pageYOffset,
-    behavior: 'smooth',
-  })
+  if (checker.value) {
+    window.scrollTo({
+      top: checker.value.getBoundingClientRect().top - 20 + window.pageYOffset,
+      behavior: 'smooth',
+    })
+  }
 }
 
 const router = useRouter()
 const route = useRoute()
 
-const url = ref((route.query?.url as string) || '')
+const url = ref(route.query?.url ? decodeURIComponent(route.query?.url) : '')
 const urlFetching = ref(false)
 const uncoveredUrl = ref('')
 const error = ref<string | null>(null)
