@@ -1,11 +1,13 @@
 <template>
   <main>
-    <p>Your plate is ready!</p>
-    <p>todo:</p>
-    <ul>
-      <li class="pl-4">- add firebase config to plugins/firebase/app.ts</li>
-    </ul>
+    <CheckerSection />
+    <FeaturesSection id="features" />
+    <FaqSection id="faq" />
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CheckerSection from '~/components/CheckerSection.vue'
+import FaqSection from '~/components/FaqSection.vue'
+import FeaturesSection from '~/components/FeaturesSection.vue'
+</script>

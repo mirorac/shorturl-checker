@@ -1,11 +1,11 @@
 <template>
-  <header>
-    <h1 class="text-2xl text-red-800">Let's code</h1>
-  </header>
-
+  <HeaderPanel />
   <RouterView />
+  <FooterSection />
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import HeaderPanel from '~/components/HeaderPanel.vue'
+import FooterSection from '~/components/FooterSection.vue'
+import { RouterView } from 'vue-router'
 </script>

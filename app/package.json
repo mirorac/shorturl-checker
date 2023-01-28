@@ -14,13 +14,17 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.8",
     "@vueuse/core": "^9.11.1",
-    "autoprefixer": "^10.4.13",
     "firebase": "^9.16.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.12",
     "@vicons/antd": "^0.12.0",
