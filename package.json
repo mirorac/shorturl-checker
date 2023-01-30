@@ -1,0 +1,19 @@
+{
+  "name": "shorturl-checker",
+  "version": "0.0.1",
+  "description": "Setup your next app quickly with Firebase and Tailwind",
+  "main": "none",
+  "scripts": {
+    "deploy": "cd app && npm run build && cd .. && firebase deploy --only hosting"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirorac/shorturl-checker.git"
+  },
+  "author": "mirorac",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/mirorac/shorturl-checker/issues"
+  },
+  "homepage": "https://github.com/mirorac/shorturl-checker#readme"
+}
