@@ -154,6 +154,7 @@ import {
 } from '@vicons/fluent'
 import { LoadingOutlined as LoadingIcon } from '@vicons/antd'
 import { useRoute, useRouter } from 'vue-router'
+import { analytics } from '~/plugins/firebase/analytics'
 type State = 'ready' | 'working' | 'done'
 defineEmits<{
   (e: 'change', state: State): void
@@ -184,6 +185,7 @@ const sslError = ref<string | null>('')
 async function executeCheck() {
   toViewport()
   reset()
+  analytics.logEvent('use_feature', { featureName: 'uncover_url' })
   try {
     const urlObject = new URL(url.value)
     if (urlObject.hostname !== 'tinyurl.com') {
