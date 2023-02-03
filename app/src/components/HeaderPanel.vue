@@ -5,7 +5,7 @@
         class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10"
       >
         <div class="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#" class="flex items-center space-x-2 text-emerald-600">
+          <a href="/" class="flex items-center space-x-2 text-emerald-600">
             <LogoIcon class="h-10" />
             <h1 class="font-medium">TinyURL Checker</h1>
           </a>
@@ -20,12 +20,12 @@
         </div>
         <PopoverGroup as="nav" class="hidden space-x-10 md:flex">
           <a
-            href="#faq"
+            href="/#faq"
             class="text-base font-medium text-gray-500 hover:text-gray-900"
             >FAQ</a
           >
           <a
-            href="#features"
+            href="/#features"
             class="text-base font-medium text-gray-500 hover:text-gray-900"
             >Features</a
           >
@@ -34,12 +34,13 @@
           class="hidden items-center justify-end md:flex md:flex-1 lg:w-0"
           :class="{ invisible: y < 400 }"
         >
-          <button
-            @click="toViewport"
+          <a
+            href="/"
+            @click.prevent="toViewport"
             class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-emerald-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-emerald-700"
           >
             Check URL now
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -97,7 +98,9 @@
                 Want stay safe?
                 {{ ' ' }}
                 <PopoverButton
-                  @click="toViewport"
+                  as="a"
+                  href="/#"
+                  @click.prevent="toViewport"
                   class="text-emerald-600 hover:text-emerald-500"
                 >
                   Check URL now
@@ -124,6 +127,9 @@ import {
   ShieldCheckmarkOutline as LogoIcon,
 } from '@vicons/ionicons5'
 import { useScroll } from '@vueuse/core'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 function toViewport() {
   const checker = document.querySelector('#checker')
@@ -132,6 +138,8 @@ function toViewport() {
       top: checker.getBoundingClientRect().top - 20 + window.pageYOffset,
       behavior: 'smooth',
     })
+  } else {
+    router.push({ name: 'home' })
   }
 }
 
