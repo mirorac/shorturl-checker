@@ -140,6 +140,15 @@ function toViewport() {
     })
   } else {
     router.push({ name: 'home' })
+    setTimeout(() => {
+      const checker = document.querySelector('#checker')
+      if (checker) {
+        window.scrollTo({
+          top: checker.getBoundingClientRect().top - 20,
+          behavior: 'smooth',
+        })
+      }
+    }, 100)
   }
 }
 

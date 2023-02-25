@@ -21,4 +21,5 @@
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
+window.scrollTo({ top: 0 })
 </script>
