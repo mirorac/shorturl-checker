@@ -49,8 +49,7 @@
 const posts = [
   {
     id: 1,
-    title:
-      'The Guide to Checking Short URLs for Safety: Understanding URL Security',
+    title: 'Is TinyURL Safe? A Comprehensive Guide to URL Safety Checks',
     to: { name: 'article-safe-url' },
     description: `In this guide, we will discuss the importance of checking short URLs for
         safety, the dangers of using shortened URLs without verifying the

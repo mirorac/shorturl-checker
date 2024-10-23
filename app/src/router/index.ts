@@ -20,6 +20,11 @@ const router = createRouter({
       children: [
         {
           name: 'article-safe-url',
+          path: 'is-tinyurl-safe',
+          component: SafeUrlArticle,
+        },
+        {
+          name: 'article-safe-url__old',
           path: 'check-short-urls-for-safety',
           component: SafeUrlArticle,
         },
