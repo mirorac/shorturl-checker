@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mirorac/shorturl-checker/issues"
   },
-  "homepage": "https://github.com/mirorac/shorturl-checker#readme"
+  "homepage": "https://github.com/mirorac/shorturl-checker#readme",
+  "dependencies": {
+    "snoowrap": "^1.23.0"
+  }
 }
