@@ -1,2 +1,3 @@
 User-Agent: *
 Allow: /
+Sitemap: https://tinyurl-checker.web.app/sitemap.xml
