@@ -59,5 +59,16 @@ const posts = [
     datetime: '2023-02-25',
     category: { title: 'Safety', href: '#' },
   },
+  {
+    id: 2,
+    title: 'TinyURL Virus: Understanding Risks and Safety Measures',
+    to: { name: 'article-virus' },
+    description: `What is the TinyURL virus? Learn about the risks of clicking on shortened URLs, 
+    how the TinyURL virus spreads, and effective safety measures to protect yourself from malware 
+    and phishing attacks.`,
+    date: 'Oct 23, 2024',
+    datetime: '2024-10-23',
+    category: { title: 'Safety', href: '#' },
+  },
 ]
 </script>
