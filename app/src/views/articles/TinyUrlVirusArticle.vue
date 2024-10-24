@@ -2,7 +2,7 @@
   <article itemscope itemtype="https://schema.org/BlogPosting">
     <header class="flex flex-col">
       <h1
-        class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+        class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl"
         itemprop="headline"
       >
         TinyURL Virus: Understanding Risks and Safety Measures
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="prose mt-8 dark:prose-invert" itemprop="articleBody">
+    <div class="prose mt-8" itemprop="articleBody">
       <p>
         In today's digital landscape, shortened URLs like TinyURL have become
         ubiquitous, especially on social media and in marketing campaigns.

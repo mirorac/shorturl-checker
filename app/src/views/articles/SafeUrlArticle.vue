@@ -2,7 +2,7 @@
   <article itemscope itemtype="https://schema.org/BlogPosting">
     <header class="flex flex-col">
       <h1
-        class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+        class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl"
         itemprop="headline"
       >
         Is TinyURL Safe? A Comprehensive Guide to URL Safety Checks
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="prose mt-8 dark:prose-invert" itemprop="articleBody">
+    <div class="prose mt-8" itemprop="articleBody">
       <p>
         Short URLs have become a staple in today's digital world, with millions
         of people using them on social media and in marketing campaigns. While
